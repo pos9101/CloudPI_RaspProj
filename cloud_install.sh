@@ -9,7 +9,8 @@ select yn in "Yes" "No" ; do
 
 
 	#고정아이피 만들기	
-#	sudo sed -i  "s/iface eth0 inet manual/iface eth0 inet static\naddress 192.168.0.11\/24\ngateway 192.168.0.1/" /etc/network/interfaces
+	sudo sed -i 's/iface lo inet loopback/\#&/' /etc/network/interfaces
+	sudo sed -i  "s/iface eth0 inet manual/iface eth0 inet static\n\taddress 192\.168\.0\.11\/24\n\tgateway 192\.168\.0\.1/" /etc/network/interfaces
 
 
 
@@ -18,7 +19,7 @@ select yn in "Yes" "No" ; do
 #	sudo sed -i  "s/adress/address/" /etc/network/interfaces
 #	sudo sed -i "s/address 192\.168\.0\.11\/24/\taddress 192\.168\.0\.11\/24/" /etc/network/interfaces
 #	sudo sed -i "s/gateway 192\.168\.0\.1/\tgateway 192\.168\.0\.1/" /etc/network/interfaces
-#	sudo /etc/init.d/networking restart
+	sudo /etc/init.d/networking restart
 #	sudo groupadd www-data
 #	sudo usermod -a -G www-data www-data
 
@@ -44,18 +45,18 @@ select yn in "Yes" "No" ; do
 
 
 	#nginx 서버설정
-#	sudo chmod 775 /etc/nginx/sites-available/default
-#	sudo chmod 775 /home/pi/CloudPI_RaspProj/default
-#	sudo cp -f /home/pi/CloudPI_RaspProj/default /etc/nginx/sites-available/
-#	sudo sed -i "s/listen \= \/var\/run\/php5\-fpm\.sock/listen \= 127\.0\.0\.1\:9000/" /etc/php5/fpm/pool.d/www.conf
+	sudo chmod 775 /etc/nginx/sites-available/default
+	sudo chmod 775 /home/pi/CloudPI_RaspProj/default
+	sudo cp -f /home/pi/CloudPI_RaspProj/default /etc/nginx/sites-available/
+	sudo sed -i "s/listen \= \/var\/run\/php5\-fpm\.sock/listen \= 127\.0\.0\.1\:9000/" /etc/php5/fpm/pool.d/www.conf
 	
 
 
 
 
 	#업로드 파일사이즈 설정
-	sudo sed -i "s/upload_max_filesize \= 2M/upload_max_filesize \= 4096M/"	/etc/php5/fpm/php.ini
-	sudo sed -i "s/post_max_size \= 8M/post_max_size \= 4096M/"	/etc/php5/fpm/php.ini
+#	sudo sed -i "s/upload_max_filesize \= 2M/upload_max_filesize \= 4096M/"	/etc/php5/fpm/php.ini
+#	sudo sed -i "s/post_max_size \= 8M/post_max_size \= 4096M/"	/etc/php5/fpm/php.ini
 
 
 
@@ -74,7 +75,9 @@ select yn in "Yes" "No" ; do
 
 
 	#ownCloud 설치
-#	sudo wget https://download.owncloud.org/community/owncloud-9.1.4.tar.bz2#	sudo tar xvjf owncloud-9.1.4.tar.bz2
+#	sudo wget https://download.owncloud.org/community/owncloud-9.1.4.tar.bz2
+
+#	sudo tar xvjf owncloud-9.1.4.tar.bz2
 #	sudo mv owncloud /var/www/
 #	sudo chown -R www-data:www-data /var/www
 
