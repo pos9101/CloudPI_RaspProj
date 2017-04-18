@@ -9,8 +9,8 @@ select yn in "Yes" "No" ; do
 
 
 	#고정아이피 만들기	
-	sudo sed -i 's/iface lo inet loopback/\#&/' /etc/network/interfaces
-	sudo sed -i  "s/iface eth0 inet manual/iface eth0 inet static\n\taddress 192\.168\.0\.11\/24\n\tgateway 192\.168\.0\.1/" /etc/network/interfaces
+#	sudo sed -i 's/iface lo inet loopback/\#&/' /etc/network/interfaces
+#	sudo sed -i  "s/iface eth0 inet manual/iface eth0 inet static\n\taddress 192\.168\.0\.11\/24\n\tgateway 192\.168\.0\.1/" /etc/network/interfaces
 
 
 
@@ -45,10 +45,10 @@ select yn in "Yes" "No" ; do
 
 
 	#nginx 서버설정
-	sudo chmod 775 /etc/nginx/sites-available/default
-	sudo chmod 775 /home/pi/CloudPI_RaspProj/default
-	sudo cp -f /home/pi/CloudPI_RaspProj/default /etc/nginx/sites-available/
-	sudo sed -i "s/listen \= \/var\/run\/php5\-fpm\.sock/listen \= 127\.0\.0\.1\:9000/" /etc/php5/fpm/pool.d/www.conf
+#	sudo chmod 775 /etc/nginx/sites-available/default
+#	sudo chmod 775 /home/pi/CloudPI_RaspProj/default
+#	sudo cp -f /home/pi/CloudPI_RaspProj/default /etc/nginx/sites-available/
+#	sudo sed -i "s/listen \= \/var\/run\/php5\-fpm\.sock/listen \= 127\.0\.0\.1\:9000/" /etc/php5/fpm/pool.d/www.conf
 	
 
 
@@ -84,7 +84,7 @@ select yn in "Yes" "No" ; do
 
 
 	echo "owncloud 설치완료"
-	echo "cloud URL: 192.168.0.111"
+	echo "cloud URL: 192.168.0.113"
 
 
 
