@@ -2,15 +2,14 @@
 
 sudo apt-get -y install update
 sudo apt-get -y install apache2
-sudo apt-get -y install libapache2-mod-auth-mysql
-sudo apt-get -y install mysql-server mysql-client
 sudo apt-get -y install php5
-sudo apt-get -y install php5-common php5 libapache2-mod-php5
-sudo apt-get -y install php5-mysql
 sudo /etc/init.d/apache2 restart
+sudo apt-get -y install php5-mysql
+sudo apt-get -y install php5-gd php5-curl php5-json php5-intl php5-mcrypt php5-imagick mysql-server
 sudo /etc/init.d/mysql restart
 source /etc/apache2/envvars
 /usr/sbin/apache2 -V
+php5 -v
 
 cd /home/pi/
 mkdir server_apache
@@ -20,5 +19,9 @@ tar -xvf owncloud-9.1.4.tar.bz2
 sudo mv owncloud/ server_apache/
 sudo rm -rf owncloud-9.1.4.tar.bz2
 sudo sed -i 's:/var/www/html:/home/pi/server_apache:' /etc/apache2/sites-enabled/000-default.conf
+sudo sed -i 's:/var/www/html:/home/pi/server_apache:' /etc/apache2/sites-available/000-default.conf
+
+sudo chown -R www-data:www-data /home/pi/server_apache/owncloud/
 sudo /etc/init.d/apache2 restart
 source /etc/apache2/envvars
+
