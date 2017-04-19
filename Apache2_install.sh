@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo "start to installing owncloud on Apache2"
+
+select yn in "Yes" "No" ; do
+	case $yn in
+	Yes) echo "install"
+
 sudo apt-get -y install update
 sudo apt-get -y install apache2
 sudo apt-get -y install php5
@@ -24,4 +30,9 @@ sudo sed -i 's:/var/www/html:/home/pi/server_apache:' /etc/apache2/sites-availab
 sudo chown -R www-data:www-data /home/pi/server_apache/owncloud/
 sudo /etc/init.d/apache2 restart
 source /etc/apache2/envvars
-
+	;;
+	No) echo "cancel"
+	;;
+	esac
+	exit
+done
