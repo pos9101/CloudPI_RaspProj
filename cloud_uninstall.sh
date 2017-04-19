@@ -8,11 +8,11 @@ select yn in "Yes" "No" ; do
 
 
 	#서버종료
-#	sudo /etc/init.d/php5-fpm stop
-#	sudo /etc/init.d/nginx stop
+	sudo /etc/init.d/php5-fpm stop
+	sudo /etc/init.d/nginx stop
 
 	#패키지삭제
-#	rm -f owncloud-9.1.4.tar.bz2
+	rm -f owncloud-9.1.4.tar.bz2
 
 
 	#ip수정
@@ -24,10 +24,10 @@ select yn in "Yes" "No" ; do
 
 
 	#패키지 삭제
-#	sudo apt-get remove nginx openssl ssl-cert php5-cli php5-sqlite php5-gd php5-common php5-cgi sqlite3 php-pear php-apc curl libapr1 libtool curl libcurl4-openssl-dev php-xml-parser php5 php5-dev php5-gd php5-fpm memcached php5-memcache varnish
+	sudo apt-get remove nginx openssl ssl-cert php5-cli php5-sqlite php5-gd php5-common php5-cgi sqlite3 php-pear php-apc curl libapr1 libtool curl libcurl4-openssl-dev php-xml-parser php5 php5-dev php5-gd php5-fpm memcached php5-memcache varnish
 
-#	sudo apt-get remove php5-curl
-#	sudo rm -rf  /var/www/owncloud
+	sudo apt-get remove php5-curl
+	sudo rm -rf  /var/www/owncloud
 
 
 	#php설정 변경

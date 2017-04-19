@@ -27,10 +27,10 @@ select yn in "Yes" "No" ; do
 
 
 	#패키지 설치
-#	sudo apt-get update
-#	sudo apt-get install -y nginx openssl ssl-cert php5-cli php5-sqlite php5-gd php5-common php5-cgi sqlite3 php-pear php-apc curl libapr1 libtool curl libcurl4-openssl-dev php-xml-parser php5 php5-dev php5-gd php5-fpm memcached php5-memcache varnish
+	sudo apt-get update
+	sudo apt-get install -y nginx openssl ssl-cert php5-cli php5-sqlite php5-gd php5-common php5-cgi sqlite3 php-pear php-apc curl libapr1 libtool curl libcurl4-openssl-dev php-xml-parser php5 php5-dev php5-gd php5-fpm memcached php5-memcache varnish
 
-#	sudo apt-get install -y php5-curl
+	sudo apt-get install -y php5-curl
 
 
 
@@ -55,8 +55,8 @@ select yn in "Yes" "No" ; do
 
 
 	#업로드 파일사이즈 설정
-#	sudo sed -i "s/upload_max_filesize \= 2M/upload_max_filesize \= 4096M/"	/etc/php5/fpm/php.ini
-#	sudo sed -i "s/post_max_size \= 8M/post_max_size \= 4096M/"	/etc/php5/fpm/php.ini
+	sudo sed -i "s/upload_max_filesize \= 2M/upload_max_filesize \= 4096M/"	/etc/php5/fpm/php.ini
+	sudo sed -i "s/post_max_size \= 8M/post_max_size \= 4096M/"	/etc/php5/fpm/php.ini
 
 
 
@@ -75,11 +75,11 @@ select yn in "Yes" "No" ; do
 
 
 	#ownCloud 설치
-#	sudo wget https://download.owncloud.org/community/owncloud-9.1.4.tar.bz2
+	sudo wget https://download.owncloud.org/community/owncloud-9.1.4.tar.bz2
 
-#	sudo tar xvjf owncloud-9.1.4.tar.bz2
-#	sudo mv owncloud /var/www/
-#	sudo chown -R www-data:www-data /var/www
+	sudo tar xvjf owncloud-9.1.4.tar.bz2
+	sudo mv owncloud /var/www/
+	sudo chown -R www-data:www-data /var/www
 
 
 
