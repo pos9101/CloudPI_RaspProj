@@ -16,6 +16,7 @@ sudo /etc/init.d/mysql restart
 source /etc/apache2/envvars
 /usr/sbin/apache2 -V
 php5 -v
+sed -i 's:upload_max_filesize = 2M:upload_max_filesize = 1048M:' /etc/php5/fpm/php.ini
 
 cd /home/pi/
 mkdir server_apache
