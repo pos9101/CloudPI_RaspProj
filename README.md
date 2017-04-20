@@ -16,6 +16,7 @@ upload max size is 1048M ,while Upload default max size of Owncloud is 2M
 if you want to change max size, fix /etc/php5/fpm/php.ini. 
 
 upload_max_filesize = 2M  
+post_max_size = 8M
 
 is a sentence which you change.
 
