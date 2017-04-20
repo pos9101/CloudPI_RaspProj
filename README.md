@@ -13,7 +13,7 @@ python file use 2files which are Apache2_install.sh and Apache2_uninstall.sh
 It is written in Shell Script Language
 
 upload max size is 1048M ,while Upload default max size of Owncloud is 2M 
-if you want to change max size, fix /etc/php5/fpm/php.ini. 
+if you want to change max size, fix /etc/php5/fpm/php.ini. and /etc/php5/apache2/php.ini
 
 upload_max_filesize = 2M  
 post_max_size = 8M
